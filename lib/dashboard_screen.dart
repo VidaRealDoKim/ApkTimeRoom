@@ -11,6 +11,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
 
   final List<Widget> _pages = [
     Center(child: Text('Página Inicial', style: TextStyle(fontSize: 22))),
+    Center(child: Text('Reservas', style: TextStyle(fontSize: 22))),
+    Center(child: Text('Suas Salas', style: TextStyle(fontSize: 22))),
     Center(child: Text('Perfil do Usuário', style: TextStyle(fontSize: 22))),
   ];
 
@@ -31,6 +33,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Color(0xFF2CC0AF), // muda o topo
         title: Text('Dashboard'),
         actions: [
           IconButton(
@@ -42,18 +45,33 @@ class _DashboardScreenState extends State<DashboardScreen> {
       ),
       body: _pages[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
+
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
-        selectedItemColor: Colors.blue,
+        backgroundColor: Color(0xFF2CC0AF),
+        selectedItemColor: Color(0xFF007D6E),
+        unselectedItemColor: Color(0xFF2CC0AF),
         items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Início',
           ),
+
+          BottomNavigationBarItem(
+            icon: Icon(Icons.watch_later_outlined),
+            label: 'Reservas',
+          ),
+
+          BottomNavigationBarItem(
+            icon: Icon(Icons.web_outlined),
+            label: 'Salas',
+          ),
+
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
             label: 'Perfil',
           ),
+
         ],
       ),
     );
