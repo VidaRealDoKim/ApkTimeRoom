@@ -18,9 +18,18 @@
 - Material Design
 
 ## 📸 Screenshots
-| Tela Login | Tela Home | Dashboard |
-|------------|-----------|-----------|
-| ![login](./screenshots/login.png) | ![home](./screenshots/home.png) | ![dashboard](./screenshots/dashboard.png) |
+## 📸 Screenshots
+
+| Tela | Preview |
+|------|---------|
+| Login | ![login](./screenshots/login.png) |
+| Home | ![home](./screenshots/home.png) |
+| Cadastro | ![cadastro](./screenshots/cadastro.png) |
+| Dashboard | ![dashboard](./screenshots/dashboard.png) |
+| Nova Reserva | ![nova_reserva](./screenshots/nova_reserva.png) |
+| Salas Disponíveis | ![salas_disponiveis](./screenshots/salas_disponiveis.png) |
+| Perfil | ![perfil](./screenshots/perfil.png) |
+| Carregamento | ![carregamento](./screenshots/carregamento.png) |
 
 ## 🛠️ Como Rodar o Projeto
 
