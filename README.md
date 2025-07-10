@@ -19,9 +19,9 @@
 
 ## 📸 Screenshots
 
-| Tela Inicial | Nova Sala | Lista de Salas |
-|--------------|-----------|----------------|
-| ![home](./screenshots/home.png) | ![nova_sala](./screenshots/nova_sala.png) | ![lista](./screenshots/lista.png) |
+| Tela Inicial                       | Nova Sala | Lista de Salas |
+|------------------------------------|-----------|----------------|
+| ![home](./screenshots/HOME - 0.png | ![nova_sala](./screenshots/nova_sala.png) | ![lista](./screenshots/lista.png) |
 
 > 💡 *Adicione as imagens na pasta `/screenshots` do projeto e atualize os nomes conforme necessário.*
 
