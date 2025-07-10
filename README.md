@@ -13,4 +13,27 @@
 ## 📲 Tecnologias Utilizadas
 
 - Flutter + Dart
+- Provider (Gerenciamento de estado)
+- SQLite / Firebase (dependendo da sua persistência)
 - Material Design
+
+## 📸 Screenshots
+
+| Tela Inicial | Nova Sala | Lista de Salas |
+|--------------|-----------|----------------|
+| ![home](./screenshots/home.png) | ![nova_sala](./screenshots/nova_sala.png) | ![lista](./screenshots/lista.png) |
+
+> 💡 *Adicione as imagens na pasta `/screenshots` do projeto e atualize os nomes conforme necessário.*
+
+## 🛠️ Como Rodar o Projeto
+
+```bash
+# 1. Clone o repositório
+git clone https://github.com/seu-usuario/timeroom.git
+cd timeroom
+
+# 2. Instale as dependências
+flutter pub get
+
+# 3. Rode o projeto
+flutter run
