@@ -1,16 +1,39 @@
-# finalproject
+# ⏳ TimeRoom
 
-A new Flutter project.
+**TimeRoom** é um aplicativo Flutter voltado para a **organização e agendamento de salas e eventos**. Ideal para equipes, escolas ou qualquer ambiente colaborativo onde o gerenciamento de tempo e espaço é essencial.
 
-## Getting Started
+## 🚀 Funcionalidades
 
-This project is a starting point for a Flutter application.
+- 📅 Criar e agendar salas com data e horário
+- 🕰️ Visualizar lista de salas criadas
+- ✏️ Editar ou remover agendamentos
+- 💡 Interface moderna com suporte a tema escuro
+- 🔔 Notificações (em desenvolvimento)
 
-A few resources to get you started if this is your first Flutter project:
+## 📲 Tecnologias Utilizadas
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- Flutter + Dart
+- Provider (Gerenciamento de estado)
+- SQLite / Firebase (dependendo da sua persistência)
+- Material Design
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 📸 Screenshots
+
+| Tela Inicial | Nova Sala | Lista de Salas |
+|--------------|-----------|----------------|
+| ![home](./screenshots/home.png) | ![nova_sala](./screenshots/nova_sala.png) | ![lista](./screenshots/lista.png) |
+
+> 💡 *Adicione as imagens na pasta `/screenshots` do projeto e atualize os nomes conforme necessário.*
+
+## 🛠️ Como Rodar o Projeto
+
+```bash
+# 1. Clone o repositório
+git clone https://github.com/seu-usuario/timeroom.git
+cd timeroom
+
+# 2. Instale as dependências
+flutter pub get
+
+# 3. Rode o projeto
+flutter run
