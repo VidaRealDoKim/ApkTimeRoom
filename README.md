@@ -18,7 +18,6 @@
 - Material Design
 
 ## 📸 Screenshots
-## 📸 Screenshots
 
 | Tela | Preview |
 |------|---------|
