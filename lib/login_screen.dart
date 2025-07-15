@@ -1,26 +1,33 @@
 import 'package:flutter/material.dart';
-import 'dashboard_screen.dart'; // importe a nova tela
+import 'dashboard_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
   _LoginScreenState createState() => _LoginScreenState();
 }
 
-
-
 class _LoginScreenState extends State<LoginScreen> {
-  final _formKey = GlobalKey<FormState>();
-  final _emailController = TextEditingController();
-  final _senhaController = TextEditingController();
+  // Controllers dos campos de texto
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController senhaController = TextEditingController();
 
+  // Exibe ou esconde a senha
+  bool _mostrarSenha = false;
+
+  // Função chamada ao clicar em "Entrar"
   void _fazerLogin() {
-    if (_formKey.currentState!.validate()) {
-      final email = _emailController.text;
-      final senha = _senhaController.text;
+    String email = emailController.text.trim();
+    String senha = senhaController.text;
 
+    if (email.isNotEmpty && senha.isNotEmpty) {
+      // Aqui você pode validar o login
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(builder: (context) => DashboardScreen()),
+      );
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Preencha todos os campos')),
       );
     }
   }
@@ -28,43 +35,85 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // Fundo com cor personalizada (mude aqui)
       backgroundColor: Colors.grey[100],
+
       body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(24.0),
-          child: Form(
-            key: _formKey,
-            child: ListView(
-              shrinkWrap: true,
-              children: [
-                Text(
-                  'Login',
-                  style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
-                  textAlign: TextAlign.center,
+        child: SingleChildScrollView(
+          padding: EdgeInsets.all(24), // Espaçamento interno
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              // 🖼️ Logo ou imagem do app
+              Image.asset(
+                'lib/assets/images/logo.png',
+                height: 100,         // ajuste o tamanho conforme sua imagem
+                fit: BoxFit.contain, // evita distorção
+              ),
+
+              // 📝 Campo de e-mail
+              TextField(
+                controller: emailController,
+                keyboardType: TextInputType.emailAddress,
+                decoration: InputDecoration(
+                  labelText: 'E-mail',
+                  border: OutlineInputBorder(), // Borda do campo
+                  prefixIcon: Icon(Icons.email),
                 ),
-                SizedBox(height: 32),
-                TextFormField(
-                  controller: _emailController,
-                  decoration: InputDecoration(labelText: 'Email'),
-                  keyboardType: TextInputType.emailAddress,
-                  validator: (value) =>
-                  value!.isEmpty ? 'Informe um email' : null,
+              ),
+              SizedBox(height: 16),
+
+              // 🔐 Campo de senha
+              TextField(
+                controller: senhaController,
+                obscureText: !_mostrarSenha, // Esconde texto
+                decoration: InputDecoration(
+                  labelText: 'Senha',
+                  border: OutlineInputBorder(),
+                  prefixIcon: Icon(Icons.lock),
+                  suffixIcon: IconButton(
+                    icon: Icon(_mostrarSenha
+                        ? Icons.visibility
+                        : Icons.visibility_off),
+                    onPressed: () {
+                      setState(() {
+                        _mostrarSenha = !_mostrarSenha;
+                      });
+                    },
+                  ),
                 ),
-                SizedBox(height: 16),
-                TextFormField(
-                  controller: _senhaController,
-                  decoration: InputDecoration(labelText: 'Senha'),
-                  obscureText: true,
-                  validator: (value) =>
-                  value!.length < 6 ? 'Senha muito curta' : null,
-                ),
-                SizedBox(height: 24),
-                ElevatedButton(
+              ),
+              SizedBox(height: 24),
+
+              // 🔘 Botão de Login
+              SizedBox(
+                width: double.infinity,
+                height: 48,
+                child: ElevatedButton(
                   onPressed: _fazerLogin,
-                  child: Text('Entrar'),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.indigo, // Cor do botão
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12), // Borda arredondada
+                    ),
+                  ),
+                  child: Text(
+                    'Entrar',
+                    style: TextStyle(fontSize: 16),
+                  ),
                 ),
-              ],
-            ),
+              ),
+
+              SizedBox(height: 12),
+
+              // ❓ Texto de esqueci a senha (apenas visual por enquanto)
+              TextButton(
+                onPressed: () {
+                  // Aqui pode ir para uma tela de recuperação
+                },
+                child: Text('Esqueceu a senha?'),
+              ),
+            ],
           ),
         ),
       ),
