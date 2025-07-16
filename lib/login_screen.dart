@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'dashboard_screen.dart';
+import 'Dashboard/dashboard_screen.dart';
 
 class LoginScreen extends StatefulWidget {
+  const LoginScreen({super.key});
+
   @override
   _LoginScreenState createState() => _LoginScreenState();
 }
@@ -46,10 +48,12 @@ class _LoginScreenState extends State<LoginScreen> {
             children: [
               // 🖼️ Logo ou imagem do app
               Image.asset(
-                'lib/assets/images/logo.png',
-                height: 100,         // ajuste o tamanho conforme sua imagem
+                'assets/images/logo.png',
+                height: 80,// ajuste o tamanho conforme sua imagem
                 fit: BoxFit.contain, // evita distorção
+
               ),
+              SizedBox(height: 74),
 
               // 📝 Campo de e-mail
               TextField(
@@ -61,7 +65,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   prefixIcon: Icon(Icons.email),
                 ),
               ),
-              SizedBox(height: 16),
+              SizedBox(height: 24),
 
               // 🔐 Campo de senha
               TextField(
@@ -92,27 +96,61 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: ElevatedButton(
                   onPressed: _fazerLogin,
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.indigo, // Cor do botão
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12), // Borda arredondada
-                    ),
+                    ), // Cor do botão
+                    backgroundColor: Color(0xFF272525),
                   ),
                   child: Text(
                     'Entrar',
-                    style: TextStyle(fontSize: 16),
+                    style: TextStyle(fontSize: 16, color: Color(0xffffffff)),
                   ),
                 ),
               ),
 
               SizedBox(height: 12),
 
-              // ❓ Texto de esqueci a senha (apenas visual por enquanto)
+
+              // --- Texto de esqueci a senha (apenas visual por enquanto).
               TextButton(
+                style: TextButton.styleFrom(
+                  foregroundColor: Colors.black, // Cor do texto
+                    padding: EdgeInsets.all(16),
+                ),
                 onPressed: () {
-                  // Aqui pode ir para uma tela de recuperação
+                  // Ação ao clicar no link
                 },
-                child: Text('Esqueceu a senha?'),
+                child: Text(
+                  'Esqueceu a senha?',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 16,
+                    decoration: TextDecoration.underline, // Sublinhado
+                  ),
+                ),
               ),
+
+
+              // --- Texto de criar conta (apenas visual por enquanto).
+              TextButton(
+                style: TextButton.styleFrom(
+                  foregroundColor: Colors.black, // Cor do texto
+                  padding: EdgeInsets.all(16),
+                ),
+                onPressed: () {
+                  // Ação ao clicar no link
+                },
+                child: Text(
+                  'Criar conta',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 16,
+                    decoration: TextDecoration.underline, // Sublinhado
+                  ),
+                ),
+              ),
+
+
             ],
           ),
         ),

@@ -4,6 +4,8 @@ class PerfilPage extends StatelessWidget {
   final String nome = 'David Luis Kim';
   final String email = 'davidkim@gmail.com';
 
+  const PerfilPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Center(

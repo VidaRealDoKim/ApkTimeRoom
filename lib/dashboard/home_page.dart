@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'models/sala.dart'; // <-- importa o modelo
+import '../Dashboard/models/sala.dart'; // <-- importa o modelo
 
 class HomePage extends StatefulWidget {
   @override

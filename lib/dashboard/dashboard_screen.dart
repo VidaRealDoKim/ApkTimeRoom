@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'login_screen.dart'; // Importa a tela de login para redirecionar após logout
+import '../login_screen.dart';
 import 'home_page.dart';
 import 'reservas_page.dart';
 import 'salas_page.dart';
@@ -16,10 +16,10 @@ class _DashboardScreenState extends State<DashboardScreen> {
   int _selectedIndex = 0;
 
   final List<Widget> _pages = [
-    HomePage(),       // <- Aqui terá o botão e a lista de salas
-    ReservasPage(),   // <- Você pode personalizar essa também
-    SalasPage(),      // <- Pode mostrar as salas do usuário
-    PerfilPage(),     // <- Dados do perfil
+    HomePage(),
+    ReservasPage(),
+    SalasPage(),
+    PerfilPage(),     
   ];
 
   void _onItemTapped(int index) {
