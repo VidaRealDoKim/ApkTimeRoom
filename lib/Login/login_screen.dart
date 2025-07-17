@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../Dashboard/dashboard_screen.dart';
 import '../Login/forget_login.dart';
+import '../Login/create_login.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -35,11 +36,19 @@ class _LoginScreenState extends State<LoginScreen> {
     }
   }
 
-  // Função chamada ao clicar em "Entrar"
+  // Função chamada ao clicar em "esqueceu a senha?"
   void _forgetPassword() {
     Navigator.push(
       context,
       MaterialPageRoute(builder: (context) => const ForgetPassword()),
+    );
+  }
+
+  // Função chamada ao clicar em "criar conta"
+  void _createLogin() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const CreateLogin()),
     );
   }
 
@@ -176,9 +185,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     foregroundColor: Colors.black,
                     padding: EdgeInsets.zero, // remover padding interno pra usar o tamanho do SizedBox
                   ),
-                  onPressed: () {
-                    // Ação ao clicar no link
-                  },
+                  onPressed:_createLogin,
                   child: Center(
                     child: Text(
                       'Criar conta',
