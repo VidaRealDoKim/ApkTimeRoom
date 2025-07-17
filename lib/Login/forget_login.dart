@@ -62,7 +62,7 @@ class _ForgetPasswordState extends State<ForgetPassword> {
               ElevatedButton(
                 onPressed: _sendRecoveryEmail,
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.black,
+                  backgroundColor: Color(0xFF272525),
                   padding: const EdgeInsets.symmetric(vertical: 16),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(6),

@@ -146,7 +146,7 @@ class _CreateLoginState extends State<CreateLogin> {
                 child: ElevatedButton(
                   onPressed: _registrarUsuario,
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.black,
+                      backgroundColor: Color(0xFF272525),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(6),
                     ),
