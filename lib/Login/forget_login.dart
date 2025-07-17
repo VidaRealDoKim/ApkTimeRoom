@@ -12,6 +12,7 @@ class _ForgetLoginState extends State<ForgetPassword> {
 
   void _sendRecoveryEmail() {
     final email = emailController.text;
+
     // Aqui você pode colocar a lógica para enviar o e-mail de recuperação
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(content: Text('E-mail de recuperação enviado para $email')),
@@ -19,6 +20,7 @@ class _ForgetLoginState extends State<ForgetPassword> {
   }
 
   @override
+
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 238, 237, 237),
@@ -27,6 +29,8 @@ class _ForgetLoginState extends State<ForgetPassword> {
         title: const Text('Recuperar Senha'),
         centerTitle: true,
       ),
+
+
       body: Padding(
         padding: const EdgeInsets.all(24.0),
         child: Column(
@@ -34,10 +38,11 @@ class _ForgetLoginState extends State<ForgetPassword> {
           children: [
             const SizedBox(height: 32),
             const Text(
-              'Insira seu e-mail para recuperar sua senha',
+              'Informe o e-mail cadastrado abaixo',
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 18),
             ),
+
             const SizedBox(height: 32),
             TextField(
               controller: emailController,
@@ -47,29 +52,51 @@ class _ForgetLoginState extends State<ForgetPassword> {
                 border: OutlineInputBorder(),
                 prefixIcon: Icon(Icons.email),
               ),
+
             ),
+
             const SizedBox(height: 32),
             ElevatedButton(
               onPressed: _sendRecoveryEmail,
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.deepPurple,
+              style:
+
+              ElevatedButton.styleFrom(
+                backgroundColor: Colors.black,
                 padding: const EdgeInsets.symmetric(vertical: 16),
               ),
-              child: const Text(
-                'Enviar E-mail de Recuperação',
-                style: TextStyle(fontSize: 16),
+
+              child:
+              const Text('Enviar',
+                style: TextStyle(
+                  fontSize: 16,
+                  color: Color(0xffffffff),
+                ),
+
               ),
+
             ),
+
             const SizedBox(height: 16),
             TextButton(
               onPressed: () {
-                Navigator.pop(context); // Voltar para a tela de login
+                Navigator.pop(context); // Cancela ação
               },
-              child: const Text('Voltar para o login'),
+              child:
+              const Text('Cancelar',
+                style: TextStyle(
+                fontSize: 16,
+                color: Color(0xff000000),
+                ),
+              ),
+
             ),
           ],
         ),
+
       ),
+
     );
+
   }
+
 }

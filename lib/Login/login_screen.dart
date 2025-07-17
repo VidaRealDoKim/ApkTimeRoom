@@ -112,50 +112,69 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   child: Text(
                     'Entrar',
-                    style: TextStyle(fontSize: 16, color: Color(0xffffffff)),
+                    style:
+                    TextStyle(
+                        fontSize: 16,
+                        color: Color(0xffffffff)
+                    ),
                   ),
                 ),
               ),
 
-              SizedBox(height: 12),
+              SizedBox(height: 16),
 
 
-              // --- Texto de esqueci a senha (apenas visual por enquanto).
-              TextButton(
-                style: TextButton.styleFrom(
-                  foregroundColor: Colors.black, // Cor do texto
-                  padding: EdgeInsets.all(16),
-                ),
-                onPressed: _forgetPassword,
-                child: Text(
-                  'Esqueceu a senha?',
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 16,
-                    decoration: TextDecoration.underline, // Sublinhado
+              // --- Texto de esqueci a senha
+              SizedBox(
+                width: double.infinity,
+                height: 48,
+                child: TextButton(
+                  style: TextButton.styleFrom(
+                    foregroundColor: Colors.black,
+                    padding: EdgeInsets.zero, // tira o padding pra usar o tamanho do SizedBox
+                    // ou se quiser um padding interno, pode ajustar aqui
+                  ),
+                  onPressed: _forgetPassword,
+                  child: Center( // centraliza o texto
+                    child: Text(
+                      'Esqueceu a senha?',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 16,
+                        decoration: TextDecoration.underline,
+                      ),
+                    ),
                   ),
                 ),
               ),
+
 
 
               // --- Texto de criar conta (apenas visual por enquanto).
-              TextButton(
-                style: TextButton.styleFrom(
-                  foregroundColor: Colors.black, // Cor do texto
-                  padding: EdgeInsets.all(16),
-                ),
-                onPressed: () {
-                  // Ação ao clicar no link
-                },
-                child: Text(
-                  'Criar conta',
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 16,
-                    decoration: TextDecoration.underline, // Sublinhado
+              SizedBox(
+                width: double.infinity,
+                height: 48,
+                child: TextButton(
+                  style: TextButton.styleFrom(
+                    foregroundColor: Colors.black,
+                    padding: EdgeInsets.zero, // remover padding interno pra usar o tamanho do SizedBox
+                  ),
+                  onPressed: () {
+                    // Ação ao clicar no link
+                  },
+                  child: Center(
+                    child: Text(
+                      'Criar conta',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 16,
+                        decoration: TextDecoration.underline,
+                      ),
+                    ),
                   ),
                 ),
               ),
+
 
 
             ],
