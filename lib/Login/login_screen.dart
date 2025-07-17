@@ -69,20 +69,37 @@ class _LoginScreenState extends State<LoginScreen> {
                 controller: emailController,
                 keyboardType: TextInputType.emailAddress,
                 decoration: InputDecoration(
+                    filled: true,
+                   fillColor: Colors.grey[100],
+                    contentPadding: const EdgeInsets.symmetric(
+                      vertical: 14,
+                     horizontal: 16,
+                    ),
+                   border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8),
+                    ),
                   labelText: 'E-mail',
-                  border: OutlineInputBorder(), // Borda do campo
                   prefixIcon: Icon(Icons.email),
                 ),
               ),
               SizedBox(height: 24),
+
 
               // 🔐 Campo de senha
               TextField(
                 controller: senhaController,
                 obscureText: !_mostrarSenha, // Esconde texto
                 decoration: InputDecoration(
+                  filled: true,
+                  fillColor: Colors.grey[100],
+                  contentPadding: const EdgeInsets.symmetric(
+                    vertical: 14,
+                    horizontal: 16,
+                  ),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(8),
+                  ),
                   labelText: 'Senha',
-                  border: OutlineInputBorder(),
                   prefixIcon: Icon(Icons.lock),
                   suffixIcon: IconButton(
                     icon: Icon(_mostrarSenha
