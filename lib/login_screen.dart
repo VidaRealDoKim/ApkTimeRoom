@@ -48,7 +48,7 @@ class _LoginScreenState extends State<LoginScreen> {
             children: [
               // 🖼️ Logo ou imagem do app
               Image.asset(
-                'assets/images/logo.png',
+                'images/logo.png',
                 height: 80,// ajuste o tamanho conforme sua imagem
                 fit: BoxFit.contain, // evita distorção
 
