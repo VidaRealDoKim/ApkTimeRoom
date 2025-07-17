@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'Dashboard/dashboard_screen.dart';
+import '../Dashboard/dashboard_screen.dart';
+import '../Login/forget_login.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -32,6 +33,14 @@ class _LoginScreenState extends State<LoginScreen> {
         SnackBar(content: Text('Preencha todos os campos')),
       );
     }
+  }
+
+  // Função chamada ao clicar em "Entrar"
+  void _forgetPassword() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const ForgetPassword()),
+    );
   }
 
   @override
@@ -115,11 +124,9 @@ class _LoginScreenState extends State<LoginScreen> {
               TextButton(
                 style: TextButton.styleFrom(
                   foregroundColor: Colors.black, // Cor do texto
-                    padding: EdgeInsets.all(16),
+                  padding: EdgeInsets.all(16),
                 ),
-                onPressed: () {
-                  // Ação ao clicar no link
-                },
+                onPressed: _forgetPassword,
                 child: Text(
                   'Esqueceu a senha?',
                   style: TextStyle(

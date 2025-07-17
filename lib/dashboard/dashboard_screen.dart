@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../login_screen.dart';
+import '../Login/login_screen.dart';
 import 'home_page.dart';
 import 'reservas_page.dart';
 import 'salas_page.dart';
