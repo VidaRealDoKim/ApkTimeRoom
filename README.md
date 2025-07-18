@@ -14,7 +14,7 @@
 
 - Flutter + Dart
 - Provider (Gerenciamento de estado)
-- SQLite / Firebase (dependendo da sua persistência)
+- SQLite / Firebase (dependendo persistência)
 - Material Design
 
 ## 📸 Screenshots
